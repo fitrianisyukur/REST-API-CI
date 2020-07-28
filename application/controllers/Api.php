@@ -23,13 +23,13 @@ class Api extends BD_Controller {
     
 	public function data_get()
 	{
-		$data=$this->db->get('film');
+		$data=$this->db->get('skincare');
 		$this->response($data->result(),200);
 	}
 	public function data_post()
 	{
 		$data=$this->post();
-		$result=$this->db->insert('film',$data);
+		$result=$this->db->insert('skincare',$data);
 		$this->response($result,200);
 	}
 	public function data_put()
@@ -37,14 +37,14 @@ class Api extends BD_Controller {
 		$data=$this->put();
 		$id=$this->uri->segment(3);
 		$this->db->where('id',$id);
-		$result=$this->db->update('film',$data);
+		$result=$this->db->update('skincare',$data);
 		$this->response($result,200);
 	}
 	public function data_delete()
 	{
 		$id=$this->uri->segment(3);
 		$this->db->where('id',$id);
-		$result=$this->db->delete('film');
+		$result=$this->db->delete('skincare');
 		$this->response($result,200);
 	}
 	
